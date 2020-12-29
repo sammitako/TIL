@@ -137,7 +137,7 @@ git commit -m 'First Commit Message'
 # 항상 경로 확인! (github에 업로드 할 파일이 저장된 폴더로 이동 후 작업)
 cd /Users/sammita/__git init으로 생성한 폴더 이름__
 
-git remote add origin __url__ # 이 명령어는, 위 1번에서 repository 생성 후 나오는 페이지에서 …or create 																a new repository on the command line 박스에 있는 명령어를 복사  
+git remote add origin __url__ # 이 명령어는, 위 1번에서 repository 생성 후 나오는 페이지에서 …or create a new repository on the command line 박스에 있는 명령어를 복사  
 git push origin master 
 
 git remote -v # 체크용
