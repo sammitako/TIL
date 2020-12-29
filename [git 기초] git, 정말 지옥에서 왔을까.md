@@ -56,7 +56,7 @@
 
 * `git config --global user.name '사용자 이름 입력'`
 * `git config --global user.email '사용자 이메일 주소(github 이메일과 동일하게 설정)'`
-* **git commit author 체크용: ** `git config --global -l` 
+* **git commit author 체크용:** `git config --global -l` 
 
 ### 2. 로컬 저장소 설정
 
