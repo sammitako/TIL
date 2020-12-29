@@ -17,11 +17,12 @@
 
 ![storages](md-images/storages-9267850.png)
 
-### 로컬 저장소
+### [로컬 저장소]
 
 #### 1. working directory
 
 * **[정의]** 우리가 폴더를 만들고 파일을 만드는 작업 공간
+
 * **[사용법]** `git add` 를 하면 `staging area` 로 이동
 
 #### 2. staging area
@@ -36,7 +37,7 @@
 
 
 
-### 원격 저장소
+### [원격 저장소]
 
 > 위의 로컬 저장소의 세번 째 통인 `commits` 박스
 
@@ -55,7 +56,7 @@
 
 * `git config --global user.name '사용자 이름 입력'`
 * `git config --global user.email '사용자 이메일 주소(github 이메일과 동일하게 설정)'`
-* **git commit author 체크용: **`git config --global -l` 
+* **git commit author 체크용: ** `git config --global -l` 
 
 ### 2. 로컬 저장소 설정
 
