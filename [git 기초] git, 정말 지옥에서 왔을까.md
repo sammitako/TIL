@@ -60,14 +60,14 @@
 
 ### 2. 로컬 저장소 설정
 
-* `git init`
-  * 저장소 초기화
-  *  `.git` 폴더가 생성되고, 여기에 모든 **git과 관련된 정보들**이 저장됨
+```bash
+git init
+```
+
+* 저장소 초기화
+*  `.git` 폴더가 생성되고, 여기에 모든 **git과 관련된 정보들**이 저장됨
 
 ### 3. add
-
-* *working directory* 의 변경사항을 *staging area* 상태로 변경
-* `commit` 할 대상 파일을 관리
 
 ```bash
 # 상황에 맞게 한 줄만 타이핑 후 엔터!
@@ -78,7 +78,16 @@ git add my_folder/ # 특정 폴도
 git add a.txt b.txt c.txt # 복수의 파일
 ```
 
+* *working directory* 의 변경사항을 *staging area* 상태로 변경
+* `commit` 할 대상 파일을 관리
+
+
+
 ### 4. commit
+
+```bash
+git commit -m 'First Commit Message'
+```
 
 * 지금 상태를 **스냅샷** 찍음
 
@@ -88,10 +97,6 @@ git add a.txt b.txt c.txt # 복수의 파일
 
   * [좋은 git 커밋 메시지를 작성하기 위한 7가지 약속](https://meetup.toast.com/posts/106)
   * [좋은 git commit 메시지를 위한 영어 사전](https://blog.ull.im/engineering/2019/03/10/logs-on-git.html)
-
-```bash
-git commit -m 'First Commit Message'
-```
 
 
 
