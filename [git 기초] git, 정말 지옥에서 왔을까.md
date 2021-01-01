@@ -15,7 +15,7 @@
 
 > 로컬 저장소의 **세 개의 통**만 기억하자
 
-![storages](md-images/storages-9267850.png)
+![storages](md-images/storages.png)
 
 ### [로컬 저장소]
 
