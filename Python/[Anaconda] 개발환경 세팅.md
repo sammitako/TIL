@@ -63,7 +63,7 @@
 
 ### Python [conda env.data_env]
 
-![jupyter-notebook](../md-images/jupyter-notebook.png)
+![jupyter-notebook](md-images/jupyter-notebook.png)
 
 ### 기억해야 할 용어 및 단축키
 
