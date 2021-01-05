@@ -57,7 +57,13 @@
    jupyter notebook
    ```
 
+   **[참고] Terminal에서 Jupyter Notebook 바로 실행하기**
 
+   1. 위쪽 6번에서 설정한 홈 디렉토리로 이동
+   2. `conda activate __생성한 가상환경 이름__`
+   3. `jupyter notebook`
+
+   
 
 ## Jupyter Notebook
 
