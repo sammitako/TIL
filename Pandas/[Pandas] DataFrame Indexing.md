@@ -235,12 +235,59 @@ display(df.loc['one':'three'], df['Dept':'Year']) # 오류 -> 컬럼에 대한 �
 display(df.loc['one':'three', 'Dept':'Year']) # loc 이용하면 됨
 ```
 
-# Boolean Indexing (record)
+## Boolean Indexing (record)
 
 ```python
 # 학점이 4.0을 초과하는 학생의 이름과 학점을 DataFrame으로 출력
 df['GPA'] > 4.0 # boolean mask
 display(df.loc[df['GPA'] > 4.0,['Name', 'GPA']]) # 행, 열
+```
+
+
+
+## loc을 이용한 row 추가 및 변경
+
+```python
+data = {'Name': ['Sam', 'Sarah', 'Bob', 'Chris', 'John'],
+        'Dept': ['CS', 'Math', 'Law', 'Lit', 'Stats'],
+        'Year': [1, 2, 2, 4, 3],
+        'GPA': [1.3, 3.5, 2.7, 4.3, 4.5]}
+
+df = pd.DataFrame(data, 
+                  columns=['Dept', 'Name', 'Year', 'GPA'],
+                  index=['one', 'two', 'three', 'four','five'])
+
+df.loc['six', :] = ['Business', 'Maria', 3, 3.7] # 추가
+display(df)
+
+df.loc['five', :] = ['Business', 'Maria', 3, 3.7] # 변경
+display(df)
+
+df.loc['seven', 'Name':'GPA'] = ['Gio', 3, 4.5] # 인덱스만 잘 맞추면 잘 들어가고 그 외는 NaN
+```
+
+## row 삭제
+
+**[default 값]**
+
+- `axis=0`
+- `inplace=False`
+
+```python
+# column 삭제
+df.drop('Year', axis=1, inplace=True)
+display(df)
+
+# row 삭제
+df.drop('four', axis=0, inplace=True)
+display(df)
+
+# Fancy indexing 가능
+df.drop(['one', 'three'], axis=0, inplace=True) 
+display(df)
+
+# 슬라이싱은 불가
+df.drop('one':'three', axis=0, inplace=True) # 오류남
 ```
 
 # 연습문제
