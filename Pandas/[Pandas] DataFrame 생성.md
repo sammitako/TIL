@@ -266,7 +266,7 @@ import urllib # 네트워크 관련 모듈
 
 # Open API URL
 open_api = '<http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json>'
-query_string = '?key=2d8e579e31759d1dc24ccba95acb6553&targetDt=20210113'
+query_string = '?key=나만의 키값'
 open_api_url = open_api + query_string
 print(open_api_url) # Success
 
