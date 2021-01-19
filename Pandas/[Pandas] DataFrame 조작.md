@@ -123,8 +123,6 @@ display(df)
 
 ## Series Groupby
 
-------
-
 ### 특정 column을 기준으로 그룹핑
 
 - `get_group()`: 그룹핑 된 그룹 안의 데이터를 확인
@@ -172,7 +170,6 @@ score.mean().unstack()
 
 ## DataFrame Groupby
 
-------
 
 ```python
 score = df.groupby(df['Dept'])
