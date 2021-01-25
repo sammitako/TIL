@@ -94,7 +94,7 @@ $('selector').method()
          ￮   inline element: element가 해당 내용만 영역을 차지
 
 
-         	⬩  영역 예제
+         	**<영역 예제>**
 
        ​			1. `div` : block level element
 
