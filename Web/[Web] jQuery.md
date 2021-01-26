@@ -51,6 +51,7 @@ $('selector').method()
    - `.addClass()`: CSS 스타일 적용
    - `.removeClass()`: CSS 스타일 제거
    - `.removeAttr()`: 속성 제거
+   - `.parent()`: 바로 위 부모를 찾음
 
 - 코드예제
 
@@ -90,22 +91,22 @@ $('selector').method()
 
 
          ￮   block level element: element가 한 라인을 완전히 차지
-
+    
          ￮   inline element: element가 해당 내용만 영역을 차지
 
 
          	**<영역 예제>**
-
+    
        ​			1. `div` : block level element
-
+    
        ​			2. `span` : inline element
-
+    
        * **tag**: `<>` 로 구성되는 HTML 요소
-
+    
        * **HTML의 계층 구조** - 후손, 부모, 형제, 자식
-
+    
        * 하나의 HTML 파일에서 **id 값**은 unique 하다.
-
+    
        * 반면 **클래스**는 중복값 허용 (CSS를 위해 사용되는 속성)
 
   ```jsx
@@ -395,3 +396,4 @@ $('selector').method()
       
   }
   ```
+
