@@ -195,12 +195,16 @@
 
   ​    
 
-  **[TemplateView]**
-  메인 페이지 - 프로그램 처리를 안하는 정적 컨텐츠
-  	`from django.views.generic.base import TemplateView`
-  	`TemplateView.as_view(template_name='파일명.html')`
-  	: View 함수를 거치지 않고 프로젝트 단의 template 폴더 안에 있는 Template 파일을 결과로 바로 보여줌
-            	
+  **[TemplateView]**  
+
+  메인 페이지 - 프로그램 처리를 안하는 정적 컨텐츠  
+
+  ​	`from django.views.generic.base import TemplateView`  
+
+  ​	`TemplateView.as_view(template_name='파일명.html')`    
+
+  ​	: View 함수를 거치지 않고 프로젝트 단의 template 폴더 안에 있는 Template 파일을 결과로 바로 보여줌
+  ​          	
 
 ```python
           from django.contrib import admin
@@ -216,9 +220,9 @@
 ```
 
 
-​          
 **(MyshoppingMall/templates/index.html)**
 ​          
+
 - Bootstrap4 사용
           
     - View Page Source (Example - Cover) 
