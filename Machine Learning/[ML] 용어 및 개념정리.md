@@ -67,9 +67,8 @@
 
   
 
-### Machine Learning 학습 방법
+## Machine Learning 학습 방법
 
-------
 
 4번을 제외하고 데이터를 기반하는 학습 방법  
 
