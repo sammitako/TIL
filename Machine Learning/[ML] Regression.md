@@ -38,7 +38,7 @@ Regression Model(회귀모델)은 어떠한 데이터에 대해서 그 데이터
 
 어떤 연속형 데이터 y와 이 y에 원인으로 생각되는 x간의 관계를 추정하기 위해서 만든 하나의 관계식
 
-![image-20210222170552063](regression%20model.png)
+![image-20210222170552063](md-images/regression%20model.png)
 
 
 
@@ -92,5 +92,5 @@ Regression Model(회귀모델)은 어떠한 데이터에 대해서 그 데이터
 
 **일반 수식**
 
-![image-20210222170703140](formula2.png)
+![image-20210222170703140](md-images/formula2.png)
 
