@@ -14,10 +14,8 @@
 - x의 변화: Δx가 f(x)를 얼마만큼 변화시키는 지: f(x+Δx) - f(x)를 나타냄
 
 - 미분 공식
-  $$
-  \lim _{\Delta x \rightarrow 0}\frac{f(x+\Delta z)-f(x)}{\Delta x}
-  $$
   
+  ![CodeCogsEqn](md-images/CodeCogsEqn.png)
 
 <details>
   <summary>그래프 - 특정점에 대한 접선의 기울기</summary>
@@ -48,12 +46,10 @@
 
   : x를 기준으로 Δx를 앞과 뒤, 2개 잡으면 함수값이 3개가 생기게 된다.
 
-  $$
-  \lim _{\Delta x \rightarrow 0}\frac{f(x+\Delta x)-f(x-\Delta x)}{2 \Delta x}
-  $$
-
+  ![CodeCogsEqn (1)](md-images/CodeCogsEqn%20(1).png)
+  
   <details>
-    <summary>중앙차분 그래프</summary>
+  <summary>중앙차분 그래프</summary>
     	<img src="md-images/중앙차분 그래프.png">
   </details>
 
@@ -63,33 +59,13 @@
 
 ### 기본적인 미분 공식 5개
 
------
+![공식](md-images/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8.png)
 
-$$
-[1]f(x) = 상수(constant) → f'(x) = 0
-$$
 
-$$
-[2]f(x) = ax^n → f'(x) = nax^{n-1}
-$$
-
-$$
-[3]f(x) = e^x → f'(x) = e^x
-$$
-
-$$
-[4]f(x) = e^{-x} → f(x) = -e^{-x}
-$$
-
-$$
-f(x) = lnx → f'(x) = \cfrac{1}x
-$$
 
 * 예
-  $$
-  f(x) = 3x^2 + e^x + \cfrac{1}x → f'(x) = 6x + e^x - \cfrac{1}{x^2}
-  $$
   
+  ![예](md-images/%E1%84%8B%E1%85%A8.png)
 
 
 
@@ -106,24 +82,11 @@ $$
 
 f(x,y)를 x에 대해서 partial derivative(편미분)하는 경우
 
-$$
-\frac{\partial f(x, y)}{\partial x}
-$$
+![image-20210222165148313](md-images/%E1%84%8B%E1%85%A82.png)
 
+* 예
 
-- 예
-
-  $$
-  f(x,y) = 2x + 3xy + y^3
-  $$
-  
-  $$
-  \frac{\partial f(x, y)}{\partial x}=2+3 y
-  $$
-
-$$
-\frac{\partial f(x, y)}{\partial y}=3 x+3 y^{2}
-$$
+  ![image-20210222165215100](md-images/예3.png)
 
 
 
@@ -133,32 +96,9 @@ $$
 
 합성함수를 구성하는 각 함수를 각각 미분해서 그 결과의 곱으로 계산
 
-- 예
+* 예
 
-  $$
-f(x)=e^{3 x^{2}}
-  $$
-
-  - $$
-  e^t
-    $$
-
-  - $$
-  t= 3x^2
-    $$
-  
-    
-
-* 정답
-
-$$
-\frac{\partial f}{\partial x}=\frac{\partial f}{\partial t} \times \frac{\partial t}{\partial x} =\frac{\partial\left(e^{t}\right)}{\partial t} \times \frac{\partial\left(3 x^{2}\right)}{\partial x} \Rightarrow e^{t} \cdot 6 x
-$$
-
-
-$$
-∴ f'(x) = 6x ・ e^{3x^2}
-$$
+  ![image-20210222165256528](md-images/예4.png)
 
 
 
@@ -175,9 +115,7 @@ $$
 
 - **중앙차분 이용**
 
-$$
-f^{\prime}(x)=\lim _{\Delta x \rightarrow 0}\left(\frac{f(x+2 z)-f(x)}{\Delta x}\right) \Longrightarrow \lim _{\Delta x \rightarrow 0}\left(\frac{f(x+\Delta x)-f(x-\Delta x)}{2 \Delta x}\right)
-$$
+![image-20210222165502738](md-images/중앙차분이용.png)
 
 
 
@@ -227,15 +165,8 @@ print('미분한 결과값은: {}'.format(result)) # 6.000000000039306 (근사�
 
 - **다변수함수 예제**
 
-  $$
-  f(x, y)=2 x+3 x y+y^{3}
-  $$
+  ![image-20210222165546090](md-images/%E1%84%83%E1%85%A1%E1%84%87%E1%85%A7%E1%86%AB%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%86%B7%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A8%E1%84%8C%E1%85%A6.png)
 
-  $$
-  \frac{{\partial f}}{\partial x},\frac{\partial f}{\partial y}
-  $$
-
-  **정답:** f'(1.0, 2.0)=(8.0, 15.0)
 
 
 
@@ -281,6 +212,10 @@ numerical_derivative(my_func, param) # derivative_x = [[0, 0],
 ```
 
 ![result1](md-images/result1.png)
+
+
+
+
 
 
 
