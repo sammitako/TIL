@@ -431,5 +431,5 @@ print(sess.run([node3, node1]))
 
 -----
 
-Reference: [ML_0223.ipynb](https://github.com/sammitako/TIL/blob/master/Machine%20Learning/source%20code/ML_0223.ipynb)
+Reference: [ML_0223.ipynb](https://github.com/sammitako/TIL/blob/master/Machine%20Learning/source-code/ML_0223.ipynb)
 
