@@ -42,8 +42,10 @@ plt.plot(df['공부시간(x)'], df['공부시간(x)']*4 - 10, color='magenta')
 plt.show()
 ```
 
-
-
+<details>
+  <summary><b>출력형태</b></summary>
+  	<img src="md-images/print.png">
+</details>
 
 
 <u>**[머신러닝에서의 회귀모델 수식] Predict Model**</u>
