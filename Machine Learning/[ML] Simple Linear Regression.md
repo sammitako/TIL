@@ -44,7 +44,7 @@ plt.show()
 
 <details>
   <summary><b>출력형태</b></summary>
-  	<img src="md-images/print.png">
+  	<img src="md-images/print.png" height="500", width="500">
 </details>
 
 
@@ -431,5 +431,5 @@ print(sess.run([node3, node1]))
 
 -----
 
-Reference: [ML_0223.ipynb](source code/ML_0223.ipynb)
+Reference: [ML_0223.ipynb][source code/ML_0223.ipynb]
 
