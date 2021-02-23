@@ -431,4 +431,5 @@ print(sess.run([node3, node1]))
 
 -----
 
-Reference: ML_0223.ipynb
+Reference: [ML_0223.ipynb](source code/ML_0223.ipynb)
+
