@@ -33,7 +33,7 @@
 
 결측치 제거
 
-### 0. Data Handling
+## 0. Data Handling
 
 - 어떤 Feature가 필요한지? Fancy Indexing!
 
