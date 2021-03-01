@@ -178,3 +178,9 @@ print(data[np.isin(data, outlier, invert=True)])
     <a href="https://github.com/sammitako/TIL/blob/master/Machine%20Learning/source-code/ML_0225.ipynb">👉🏼 여기 클릭</a>
 </details>
 
+
+
+-----
+
+Reference: [ML_0225](https://github.com/sammitako/TIL/blob/master/Machine%20Learning/source-code/ML_0225.ipynb)
+

@@ -199,8 +199,8 @@ print(result) # [[46.586555]] -> 예측값이 맞는거야? 틀린거야?
 Tensorflow의 모델과 예측값이 차이나는 이유?
 
 1. 결측치?
-2. 이상치?
-3. 정규화?: Data Preprocessing (2)
+2. 이상치?: [Data Preprocessing (2) - Outlier](https://github.com/sammitako/TIL/blob/master/Machine%20Learning/%5BML%5D%20Data%20Preprocessing%20(2)%20-%20Outlier.md)
+3. 정규화!: [Data Preprocessing (3) - Normalization]()
 
 ```python
 import numpy as np
@@ -243,4 +243,9 @@ plt.show()
   </ul>
   <img src="md-images/modelvisualization.png">
 </details>
+
+
+-----
+
+Reference: [ML_0225](https://github.com/sammitako/TIL/blob/master/Machine%20Learning/source-code/ML_0225.ipynb)
 
