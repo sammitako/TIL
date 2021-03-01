@@ -505,7 +505,7 @@ for step in range(300000):
        
        # W, b 갱신
        # 위에서 합쳐진 인자를 각각 뽑아서 계산
-       W = W - derivative_result[:1].reshape(1.1) # 2차원 - 2차원
+       W = W - derivative_result[:1].reshape(1, 1) # 2차원 - 2차원
        b = b - derivative_result[1:] # 1차원 벡터
        
        if step % 30000 == 0:

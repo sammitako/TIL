@@ -153,20 +153,11 @@ sklearn 라이브러리를 사용할 시, 결측치만 처리되고 이상치와
 즉, 이상치와 정규화는 sklearn 내부에서 처리되므로 학습 데이터로 raw data를 모델에 넣어주어야 한다.
 
 ```python
-# WRONG CODE
-# tensorflow_result = sess.run(H, feed_dict={X:[[80.0, 10.0, 150.0]]}) # [[97.68829]]
-
-# Proper Prediction Method
-# Normalization
-predict_data = np.array([[80.0, 10.0, 150.0]])
-scaled_predict_data = scaler_x.transform(predict_data) # scaler_x: 스케일 기준
-tensorflow_result = sess.run(H, feed_dict={X: scaled_predict_data}) 
-print(tensorflow_result) #[[0.34895673]]
-
-# Denormalization
-tensorflow_result = scaler_t.inverse_transform(tensorflow_result) # scaler_t: 디스케일 기준
-print(tensorflow_result) # [[38.406105]]
+sklearn_result = model.predict([[80, 10, 150]])
+print(sklearn_result) # [[38.8035437]]
 ```
+
+
 
 **[Tensorflow]**
 
@@ -180,8 +171,19 @@ Tensorflow를 통해 모델을 만들 시에 정규화된 데이터를 사용했
 결론적으로, 정규화를 통해 모델을 생성 시에는 반드시 위의 작업을 진행해야 한다.
 
 ```python
-sklearn_result = model.predict([[80, 10, 150]])
-print(sklearn_result) # [[38.8035437]]
+# WRONG CODE
+# tensorflow_result = sess.run(H, feed_dict={X:[[80.0, 10.0, 150.0]]}) # [[97.68829]]
+
+# Proper Prediction Method
+# Normalization
+predict_data = np.array([[80.0, 10.0, 150.0]])
+scaled_predict_data = scaler_x.transform(predict_data) # scaler_x: 스케일 기준
+tensorflow_result = sess.run(H, feed_dict={X: scaled_predict_data}) 
+print(tensorflow_result) #[[0.34895673]]
+
+# Denormalization
+tensorflow_result = scaler_t.inverse_transform(tensorflow_result) # scaler_t: 디스케일 기준
+print(tensorflow_result) # [[38.406105]]
 ```
 
 -----

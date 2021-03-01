@@ -56,7 +56,7 @@ Boxplot 그래프를 통해 시각적으로 이상치 판단이 가능하다.
 
 **[이상치 수식]**
 
-- 하위 이상치(Lower Fence): 1사분위 - IQR_value t ⨉ 1.5 초과로 작은 값들
+- 하위 이상치(Lower Fence): 1사분위 - IQR_value ⨉ 1.5 초과로 작은 값들
 
 - 상위 이상치(Upper Fence): 3사분위 + IQR_value ⨉ 1.5 초과로 큰 값들
 
