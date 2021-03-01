@@ -50,13 +50,18 @@ print(result) # 30.0
 
 # Simple Linear Regression
 
+👉🏼 **epoch 수?**
+
+학습 **데이터의 양**, 특성 또는 Tensorflow 그래프 상태에 따라 조절
+
+epoch 수를 적정량보다 크게 잡을 경우, overfitting 현상이 발생하고 적게 잡을 경우 underfitting 현상이 발생한다.
+
 ## 1. Tensorflow
 
 실제로 학습이 진행될 수록 손실함수 값이 0과 가까워 지는 지를 확인하여 학습이 제대로 진행되는 지 간접적으로 판단해야 한다.
 
 모델의 정확도에 대한 판단은 정확도 측정(accuracy, recall, precision)을 통해 가능하다.
 
-------
 
 ### 코드 이해
 
@@ -144,12 +149,6 @@ print('예측값: {}'.format(result)) # 18.999674
 -----
 
 **[스텝 별 정리]**
-
-👉🏼 **epoch 수?**
-
-학습 **데이터의 양**, 특성 또는 Tensorflow 그래프 상태에 따라 조절
-
-epoch 수를 적정량보다 크게 잡을 경우, overfitting 현상이 발생하고 적게 잡을 경우 underfitting 현상이 발생한다.
 
 1. **Training Data Set**
 
@@ -415,7 +414,7 @@ for step in range(300000):
        return y
    ```
 
-   - 
+   
 
 4. **Loss Function**
 
