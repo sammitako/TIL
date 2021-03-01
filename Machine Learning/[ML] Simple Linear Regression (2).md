@@ -1,17 +1,20 @@
 # Tensorflow 연습
 
-<details>
-  <summary>코드 이해</summary>
-  <div markdown="1">
-    + `tf.constant`: 상수노드 생성 코드로 실제 머신러닝 구현 시에는 자주 사용이 되지 않는다.
-    + `tf.float32`: 데이터 타입 중 tensorflow의 실수는 32비트가 기본으로 사용된다.
-    + `tf.placeholder`: 노드를 실행시키는 시점에 graph에 값을 주입 (node의 값을 설정)
-    	 (입력값을 "받아주는" 입력 파라미터 노드)
-          1. Training Data Set을 받아들여서 모델을 학습하는 용도
-          2. 모델이 완성된 후, 미지의 x값을 모델에 넣어 예측값을 도출하기 위한 용도
-    + `feed_dict`: 딕셔너리 형태로 데이터를 `placeholder`에 전달
-  </div>
-</details>
+### 코드 이해
+
+- `tf.constant`: 상수노드 생성 코드로 실제 머신러닝 구현 시에는 자주 사용이 되지 않는다.
+
+- `tf.float32`: 데이터 타입 중 tensorflow의 실수는 32비트가 기본으로 사용된다.
+
+- `tf.placeholder`: 노드를 실행시키는 시점에 graph에 값을 주입 (node의 값을 설정)
+
+  (입력값을 "받아주는" 입력 파라미터 노드)
+
+  1. Training Data Set을 받아들여서 모델을 학습하는 용도
+  2. 모델이 완성된 후, 미지의 x값을 모델에 넣어 예측값을 도출하기 위한 용도
+
+- `feed_dict`: 딕셔너리 형태로 데이터를 `placeholder`에 전달
+
 
 
 
@@ -55,34 +58,35 @@ print(result) # 30.0
 
 ------
 
-**epoch 수?**
+### 코드 이해
 
-학습 **데이터의 양**, 특성 또는 Tensorflow 그래프 상태에 따라 조절
+- `tf.Variable`: 값이 변하는 노드를 지칭
 
-epoch 수를 적정량보다 크게 잡을 경우, overfitting 현상이 발생하고 적게 잡을 경우 underfitting 현상이 발생한다.
+- `tf.random.normal(shape)`: 0과 1사이의 표준정규분포에서 실수 난수 값을 발생
 
-**스텝 별 정리**
+- `tf.placeholder(shape, dtype)`를 사용시, 입력 데이터가 2차원 이상일 경우 차원을 명시해줘야 한다.
 
-<details>
-  <summary>코드 이해</summary>
-  <div markdown="1">
-		+ `tf.Variable`: 값이 변하는 노드를 지칭
-		+ `tf.random.normal(shape)`: 0과 1사이의 표준정규분포에서 실수 난수 값을 발생
-		+ `tf.placeholder(shape, dtype)`를 사용시, 입력 데이터가 2차원 이상일 경우 차원을 명시해줘야 한				다.
-			그런데, 그래프 수행이 끝나서 Predict Model이 만들어지고 사용자가 입력 데이터 $x$를 모델에 주입			  하게 될 때를 고려하여 `shape=[None, 1]`으로 써줘야 한다.
-			이때 `1`은 컬럼의 수(예를 들어, 공부시간 또는 시험성적)을 의미하고 변하지 않기 때문에 열의 수는 반			  드시 명시를 해주어야 한다.
-			즉, Simple Linear Regression은 독립변수가 한 개이기 때문에 `1`인 것이다.
-			반면, `None`은 placeholder가 몇 개의 데이터(레코드)가 들어올 지는 상관하지 않는다를 의미한다.
-			따라서 `shape=[None, 1]`: 2차원 Matrix이고, 컬럼의 갯수가 한 개, 대신 레코드의 수는 상관 없음
-		+ `tf.matmul()`: 행렬곱 연산 함수
-		+ `tf.reduce_mean()`: 다차원 행렬의 평균을 구하는 함수로 defult는 모든 원소의 평균이며 axis를 지			  정하면 행의 평균, 열의 평균을 리턴한다.
-		+ `tf.Session().run(tf.global_variables_initializer())`
-		: Tensorflow의 변수를 내부적으로 사용 시, **반드시** 초기화 작업을 진행해줘야 한다.
-		(2.x 버전에서는 삭제됨)
-		+ `_`: 리턴값 사용 안함
-  </div>
-</details>
+  그런데, 그래프 수행이 끝나서 Predict Model이 만들어지고 사용자가 입력 데이터 x를 모델에 주입하게 될 때를 고려하여 `shape=[None, 1]`으로 써줘야 한다.
 
+  이때 `1`은 컬럼의 수(예를 들어, 공부시간 또는 시험성적)을 의미하고 변하지 않기 때문에 열의 수는 반드시 명시를 해주어야 한다.
+
+  즉, Simple Linear Regression은 독립변수가 한 개이기 때문에 `1`인 것이다.
+
+  반면, `None`은 placeholder가 몇 개의 데이터(레코드)가 들어올 지는 상관하지 않는다를 의미한다.
+
+  따라서 `shape=[None, 1]`: 2차원 Matrix이고, 컬럼의 갯수가 한 개, 대신 레코드의 수는 상관 없음
+
+- `tf.matmul()`: 행렬곱 연산 함수
+
+- `tf.reduce_mean()`: 다차원 행렬의 평균을 구하는 함수로 defult는 모든 원소의 평균이며 axis를 지정하면 행의 평균, 열의 평균을 리턴한다.
+
+- `tf.Session().run(tf.global_variables_initializer())`
+
+  : Tensorflow의 변수를 내부적으로 사용 시, **반드시** 초기화 작업을 진행해줘야 한다.
+
+  (2.x 버전에서는 삭제됨)
+
+- `_`: 리턴값 사용 안함
 
 
 ```python
@@ -132,9 +136,22 @@ result = sess.run(H, feed_dict={X: [[9]]})
 print('예측값: {}'.format(result)) # 18.999674
 ```
 
-- \#5 까지의 Tensorflow 그래프 형태
+<details>
+  <summary>#5 까지의 Tensorflow 그래프 형태</summary>
+  <img src="md-images/graph_tensor.png">
+</details>
 
-  ![image-20210301105216537](md-images/graph_tensor.png)
+
+
+**[스텝 별 정리]**
+
+-----
+
+**epoch 수?**
+
+학습 **데이터의 양**, 특성 또는 Tensorflow 그래프 상태에 따라 조절
+
+epoch 수를 적정량보다 크게 잡을 경우, overfitting 현상이 발생하고 적게 잡을 경우 underfitting 현상이 발생한다.
 
 1. **Training Data Set**
 
@@ -257,116 +274,118 @@ print('예측값: {}'.format(result)) # 18.999674
 
 ## 2. Python
 
-**스텝 별 정리**
+### 코드 이해
 
-- 코드 이해
+- 손실함수: W, b의 함수
 
-  - 손실함수: W, b의 함수
+  따라서 W, b를 인자로 받아서 손실함수를 계산해야 한다. 손실함수를 미분할 때 이 인자들을 수치미분 함수의 인자로 넘겨주어야 하는데, 만약 인자를 각각 따로 써주게 되면 수치미분 함수 내에서 손실함수를 처리하기가 힘들게 된다.
 
-    따라서 W, b를 인자로 받아서 손실함수를 계산해야 한다. 손실함수를 미분할 때 이 인자들을 수치미분 함수의 인자로 넘겨주어야 하는데, 만약 인자를 각각 따로 써주게 되면 수치미분 함수 내에서 손실함수를 처리하기가 힘들게 된다.
+  그래서 손실함수의 인자값을 하나의 리스트로 주지만 그 인자값을 손실함수 내에서는 2개의 값으로 따로 사용한다.
 
-    그래서 손실함수의 인자값을 하나의 리스트로 주지만 그 인자값을 손실함수 내에서는 2개의 값으로 따로 사용한다.
+- `ravel()`: 2차원 Matrix → 1차원 벡터로 변경
 
-  - `ravel()`: 2차원 Matrix → 1차원 벡터로 변경
+- `numpy.concatenate(axis=0)`: 가로 방향으로 결합
 
-  - `numpy.concatenate(axis=0)`: 가로 방향으로 결합
+- `[:1]`: 첫 번째 요소를 벡터로 뽑아냄
 
-  - `[:1]`: 첫 번째 요소를 벡터로 뽑아냄
+  이때 `[:1]`대신 `[0]`을 해주면 스칼라 값이 나오기 때문에 벡터에 대해서만 쓸 수 있는 `reshape()` 함수를 사용하지 못하게 된다.
 
-    이때 `[:1]`대신 `[0]`을 해주면 스칼라 값이 나오기 때문에 벡터에 대해서만 쓸 수 있는 `reshape()` 함수를 사용하지 못하게 된다.
+  즉, 연산을 위해 slicing을 통해 ndarray 형태를 유지하기 위함이다.
 
-    즉, 연산을 위해 slicing을 통해 ndarray 형태를 유지하기 위함이다.
 
-  ------
 
-  **Python 코드 구현시 주의해야할 사항**
+**[Python 코드 구현시 주의해야할 사항]**
 
-  - 편미분을 통해 W, b 갱신
-  - 데이터 구조(shape) 처리
+- 편미분을 통해 W, b 갱신
+- 데이터 구조(shape) 처리
 
-  ```python
-  import numpy as np
-  
-  # 1. Training Data Set
-  x_data = np.array([1,2,3,4,5]).reshape(5,1)
-  t_data = np.array([3,5,7,9,11]).reshape(5,1)
-  
-  # 2. Weight, bias
-  W = np.random.rand(1,1) 
-  b = np.random.rand(1)   
-  
-  # 3. Hypothesis 
-  def predict(x):
-      
-      y = np.dot(x, W) + b 
-      return y
-  
-  # 4. Loss Function
-  def loss_func(input_obj):
-      
-      # input_obj = [W, b]
-      input_W = input_obj[0]
-      input_b = input_obj[1]
-      
-      y = np.dot(x_data, input_W) + input_b     
-      
-      return np.mean(np.power((t_data - y), 2)) 
-  
-  # 5. 다변수 함수(W, b)에 대한 수치미분
-  def numerical_derivative(f, x):
-      
-      # f: 편미분하려고 하는 다변수 함수 -> 손실함수
-      # x: 편미분하려고 하는 모든 값 -> W, b
-      # 따라서, [W, b]에 대해 각각 편미분이 진행
-      
-      delta_x = 1e-4
-      derivative_x = np.zeros_like(x) 
-      
-      it = np.nditer(x, flags=['multi_index'])
-      
-      while not it.finished: 
-          idx = it.multi_index 
-          print('현재의 idx: {}'.format(idx)) 
-  
-          tmp = x[idx]                        
-          print('현재의 tmp: {}'.format(tmp)) # 1.0 # 2.0
-          
-          # x에 대한 편미분
-          x[idx] = tmp + delta_x 
-          fx_plus_delta = f(x) 
-          
-          # 중앙차분 미분 준비
-          x[idx] = tmp - delta_x
-          fx_minus_delta = f(x) 
-          
-          # 중앙차분
-          derivative_x[idx] = (fx_plus_delta - fx_minus_delta) / (2 * delta_x)
-          
-          # 두번째 독립변수에 대해 편미분 시행을 위해 원래 상태로 복구
-          x[idx] = tmp 
-      
-          it.iternext() # 다음 iterator, 다음 칸으로 넘어감
-          
-      return derivative_x
-  
-  # 6. learning rate
-  learning_rate = 1e-4
-  
-  # 7. Learning
-  for step in range(300000):
-  		# 현재 W, b값을 입력 파라미터 값으로 저장하여 편미분 함수에 인자값으로 넘기기 위한 용도: [W b]
-      input_param = np.concatenate((W.ravel(), b.ravel()), axis=0) 
-      
-      # 손실함수를 input_param에 대해 편미분 시행
-      derivative_result = learning_rate * numerical_derivative(loss_func, input_param)
-      
-      # W, b 갱신
-      W = W - derivative_result[:1].reshape(1.1) 
-      b = b - derivative_result[1:] 
-      
-      if step % 30000 == 0:
-          print('W: {}, b: {}'.format(W, b)) # W: [[2.0000058]], b: [0.99997904]
-  ```
+
+
+**[스텝 별 정리]**
+
+```python
+import numpy as np
+
+# 1. Training Data Set
+x_data = np.array([1,2,3,4,5]).reshape(5,1)
+t_data = np.array([3,5,7,9,11]).reshape(5,1)
+
+# 2. Weight, bias
+W = np.random.rand(1,1) 
+b = np.random.rand(1)   
+
+# 3. Hypothesis 
+def predict(x):
+    
+    y = np.dot(x, W) + b 
+    return y
+
+# 4. Loss Function
+def loss_func(input_obj):
+    
+    # input_obj = [W, b]
+    input_W = input_obj[0]
+    input_b = input_obj[1]
+    
+    y = np.dot(x_data, input_W) + input_b     
+    
+    return np.mean(np.power((t_data - y), 2)) 
+
+# 5. 다변수 함수(W, b)에 대한 수치미분
+def numerical_derivative(f, x):
+    
+    # f: 편미분하려고 하는 다변수 함수 -> 손실함수
+    # x: 편미분하려고 하는 모든 값 -> W, b
+    # 따라서, [W, b]에 대해 각각 편미분이 진행
+    
+    delta_x = 1e-4
+    derivative_x = np.zeros_like(x) 
+    
+    it = np.nditer(x, flags=['multi_index'])
+    
+    while not it.finished: 
+        idx = it.multi_index 
+        print('현재의 idx: {}'.format(idx)) 
+
+        tmp = x[idx]                        
+        print('현재의 tmp: {}'.format(tmp)) # 1.0 # 2.0
+        
+        # x에 대한 편미분
+        x[idx] = tmp + delta_x 
+        fx_plus_delta = f(x) 
+        
+        # 중앙차분 미분 준비
+        x[idx] = tmp - delta_x
+        fx_minus_delta = f(x) 
+        
+        # 중앙차분
+        derivative_x[idx] = (fx_plus_delta - fx_minus_delta) / (2 * delta_x)
+        
+        # 두번째 독립변수에 대해 편미분 시행을 위해 원래 상태로 복구
+        x[idx] = tmp 
+    
+        it.iternext() # 다음 iterator, 다음 칸으로 넘어감
+        
+    return derivative_x
+
+# 6. learning rate
+learning_rate = 1e-4
+
+# 7. Learning
+for step in range(300000):
+		# 현재 W, b값을 입력 파라미터 값으로 저장하여 편미분 함수에 인자값으로 넘기기 위한 용도: [W b]
+    input_param = np.concatenate((W.ravel(), b.ravel()), axis=0) 
+    
+    # 손실함수를 input_param에 대해 편미분 시행
+    derivative_result = learning_rate * numerical_derivative(loss_func, input_param)
+    
+    # W, b 갱신
+    W = W - derivative_result[:1].reshape(1.1) 
+    b = b - derivative_result[1:] 
+    
+    if step % 30000 == 0:
+        print('W: {}, b: {}'.format(W, b)) # W: [[2.0000058]], b: [0.99997904]
+```
 
 1. **Training Data Set**
 
@@ -494,39 +513,41 @@ print('예측값: {}'.format(result)) # 18.999674
            print('W: {}, b: {}'.format(W, b)) # W: [[2.0000058]], b: [0.99997904]
    ```
 
-### 3. Sklearn
+## 3. Sklearn
 
-**설정**
+### 설정
 
 - `conda avtivate data_env`
 - `pip install sklearn`
 
-**스텝 별** **정리**
+### 코드 이해
 
-- **코드 이해**
+- `model.coef_`: 완성된 모델에 대한 W값
+- `model.intercept_`: 완성된 모델에 대한 b값
 
-  - `model.coef_`: 완성된 모델에 대한 W값
-  - `model.intercept_`: 완성된 모델에 대한 b값
+```python
+import numpy as np
+from sklearn import linear_model
 
-  ```python
-  import numpy as np
-  from sklearn import linear_model
-  
-  # 1. Training Data Set
-  x_data = np.array([1,2,3,4,5]).reshape(5,1)
-  t_data = np.array([3,5,7,9,11]).reshape(5,1)
-  
-  # 2. Model
-  model = linear_model.LinearRegression()
-  
-  # 3. Learning
-  model.fit(x_data, t_data)
-  # Weight, bias 출력
-  print('W: {}, b: {}'.format(model.coef_, model.intercept_)) # W: [[2.]], b: [1.]
-  
-  # 4. Prediction
-  print(model.predict([[9]])) # [[19.]]
-  ```
+# 1. Training Data Set
+x_data = np.array([1,2,3,4,5]).reshape(5,1)
+t_data = np.array([3,5,7,9,11]).reshape(5,1)
+
+# 2. Model
+model = linear_model.LinearRegression()
+
+# 3. Learning
+model.fit(x_data, t_data)
+# Weight, bias 출력
+print('W: {}, b: {}'.format(model.coef_, model.intercept_)) # W: [[2.]], b: [1.]
+
+# 4. Prediction
+print(model.predict([[9]])) # [[19.]]
+```
+
+
+
+**[스텝 별 정리]**
 
 1. **Training Dat Set**
 
