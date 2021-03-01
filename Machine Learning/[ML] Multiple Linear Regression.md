@@ -4,7 +4,7 @@
 
 독립변수 마다 W값을 따로 구해주기 때문에 직선이 될 수가 없다.
 
-H=X • W+b
+H = X • W + b
 
 - X: 2차원 행렬
 
@@ -186,4 +186,5 @@ print(sklearn_result) # [[38.8035437]]
 
 -----
 
-Reference: [ML_0226]()
+Reference: [ML_0226](https://github.com/sammitako/TIL/blob/master/Machine%20Learning/source-code/ML_0226.ipynb)
+
