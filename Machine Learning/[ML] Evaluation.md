@@ -191,8 +191,9 @@ Recall과 Fall-out을 그래프로 표현
 
 <details>
   <summary>과대 적합 모델</summary>
-  <img src="md-images/overfitting.png">
+  <img src="md-images/over-fitting.png">
 </details>
+
 
 <br>
 
@@ -284,8 +285,7 @@ Epoch 당 모델이 갱신될 때, Training Data Set으로 평가를 하고 Vali
 
 <br>
 
-### CV(K-fold Cross Validation)
+## CV(K-fold Cross Validation)
 
-------
 
 총 데이터의 양이 작은 경우 교차검증하는 방법 (→나중에 설명)
