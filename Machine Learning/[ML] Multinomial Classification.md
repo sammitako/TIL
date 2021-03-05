@@ -12,13 +12,14 @@
 
   - 
     Logistic Regression
+    
+    : 데이터를 가장 잘 표현하는 직선을 찾은 후, 이 구분선을 기준으로 내가 예측하려는 데이터가 어느 쪽 영역에 들어가는 지를 판단
+    
+    <details>
+      <summary>Logistic Regression Graph</summary>
+      <img src="md-images/LogitGraph.png">
+    </details>
 
-  : 데이터를 가장 잘 표현하는 직선을 찾은 후, 이 구분선을 기준으로 내가 예측하려는 데이터가 어느 쪽 영역에 들어가는 지를 판단
-
-  <details>
-    <summary>Logistic Regression Graph</summary>
-    <img src="md-images/LogitGraph.png">
-  </details>
 
   <br>
 
@@ -291,7 +292,7 @@ print(result) # 정상, [0: 저체중, 1: 정상, 2: 과체중]
 ```
 
 
-<br>
+
 -----
 
 
