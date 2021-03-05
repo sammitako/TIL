@@ -209,6 +209,9 @@ plt.show()
 
 최소제곱법을 이용하여 손실함수를 정의하고 경사하강법을 통해 반복적으로 손실함수를 미분하여 W, b를 갱신하여 최적의 W, b를 구한다.
 
+* y: 로지스틱 모델
+* E: 손실함수
+
 ![image-20210302161337661](md-images/linear-formula.png)
 
 **Logistic Regression**
@@ -219,7 +222,7 @@ plt.show()
 
 그래프의 모양이 Convex 형태가 아니기 때문에 경사하강법을 사용할 시, 어느 지점에서나 local minima가 발생할 수 있어서 최적의 W, b값을 지닌 global minima을 찾을 수가 없게 된다.
 
-따라서 위의 손실함수를 사용할 수 없다.
+따라서 위의 손실함수(E를 사용할 수 없다.
 
 <details>
   <summary>Exponential 함수 모양</summary>
