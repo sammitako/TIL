@@ -245,7 +245,7 @@ Recall과 Fall-out을 그래프로 표현
 
   ### **Original Data Set**
 
-  * Training Data Set
+  * Training Data Set (7, 8)
 
     * 70% - Training Data Set
 
@@ -254,7 +254,7 @@ Recall과 Fall-out을 그래프로 표현
 
       : 학습 데이터가 1 epoch을 돌면서 도출한 결과를 Validation Data Set을 통해 내부 평가를 한 후 모델을 반복적으로 수정하기 위한 평가 용도 (여러 번 사용)
 
-  * Test Data Set
+  * Test Data Set (3, 2)
 
     : 모델이 완성된 후 최종적으로 모델의 성능을 평가하기 위한 용도 (한 번 사용)
   
@@ -269,15 +269,15 @@ Recall과 Fall-out을 그래프로 표현
 ## Validation
 
 
-Epoch 당 모델이 갱신될 때, Training Data Set으로 평가를 하고 Validation Data Set으로 평가를 진행
+Epoch 당 모델이 갱신될 때, Training Data Set으로 학습을 하고 Validation Data Set으로 평가를 진행
 
-- Training Data Set으로 평가하는 경우,
+- 만약 Training Data Set으로 평가하는 경우,
 
   모델의 성능 평가가 좋아지고, 어느 선(epoch) 이상으로 넘어갈 경우 Overfitting 현상이 발생하는데 Overfitting 정의가 Training Data Set에 딱 맞는 모델이 생성되는 것이므로 이 후 아무리 성능 평가를 해도 모델의 성능은 계속해서 좋아지게 된다.
 
   (Overfitting: Training Data Set에 딱 맞는 모델)
 
-- Validation Data Set으로 평가하는 경우,
+- 따라서 Validation Data Set으로 평가하는 경우,
 
   모델의 정확도는 좋아지지만, 과대적합이 발생하는 순간 모델의 정확도가 더이상 올라가지 않게 되고 결국 떨어지게 된다.
 
