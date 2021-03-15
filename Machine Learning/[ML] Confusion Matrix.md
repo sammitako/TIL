@@ -14,7 +14,7 @@
 
 <br>
 
-**[Multinomial Classification]**
+## Multinomial Classification
 
 3개의 label(정답)이 있는 multinomial classification(다중분류)에 대해 예측값을 넣어서 confusion matrix를 출력해보자.
 
@@ -33,7 +33,7 @@ print(confusion_matrix(y_true, y_pred)) # 2차원 ndarray
 
 ![image-20210315154838537](md-images/mc-matrix.png)
 
-**[MNIST Confusion Matrix]**
+## MNIST Confusion Matrix
 
 ```python
 confusion_mtrx = confusion_matrix(t_data_test, sess.run(predict, feed_dict={X: x_data_test_norm}))
