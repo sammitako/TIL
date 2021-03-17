@@ -59,19 +59,19 @@
 
 <br>
 
-### AND GATE
+### •  AND GATE
 
 ![image-20210318024809450](md-images/and.png)
 
 <br>
 
-### OR GATE
+### •  OR GATE
 
 ![image-20210318024850379](md-images/or.png)
 
 <br>
 
-### XOR GATE
+### •  XOR GATE
 
 ![image-20210318024917754](md-images/xor.png)
 
