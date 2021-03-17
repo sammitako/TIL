@@ -74,21 +74,21 @@
 
 ## 딥러닝 동작 방식 이해하기
 
-- **Input Layer**
+### **Input Layer**
 
-  입력 데이터를 바로 다음 레이어인 은닉층으로 전달(bypass)해주는 역할을 한다. Input Layer 안에 있는 하나의 노드가 그 다음 은닉층 각각의 노드에게 데이터를 모두 전파(propagation, feed forward)하는데, 이때 **레이어 사이 사이에 존재하는 W값**을 곱해서 전달하게 된다.
+입력 데이터를 바로 다음 레이어인 은닉층으로 전달(bypass)해주는 역할을 한다. Input Layer 안에 있는 하나의 노드가 그 다음 은닉층 각각의 노드에게 데이터를 모두 전파(propagation, feed forward)하는데, 이때 **레이어 사이 사이에 존재하는 W값**을 곱해서 전달하게 된다.
 
-- **Hidden Layers**
+### **Hidden Layers**
 
-  입력값에 가중치가 곱해서 데이터가 들어오게 되면, 은닉층의 로지스틱 노드는 bias를 더해 Linear Regression을 만들고, 여기에 활성화함수인 sigmoid 함수를 취해 **Logistic Regression(확률값)**을 완성하게 된다. 마지막으로 이 결과값을 다음 레이어의 모든 노드에 입력값으로 보내준다.
+입력값에 가중치가 곱해서 데이터가 들어오게 되면, 은닉층의 로지스틱 노드는 bias를 더해 Linear Regression을 만들고, 여기에 활성화함수인 sigmoid 함수를 취해 **Logistic Regression(확률값)**을 완성하게 된다. 마지막으로 이 결과값을 다음 레이어의 모든 노드에 입력값으로 보내준다.
 
-  **(부록: 은닉층의 활성화함수는 시그모이드 함수이다.)**
+**(부록: 은닉층의 활성화함수는 시그모이드 함수이다.)**
 
-- **Output Layer**
+### **Output Layer**
 
-  최종적인 결과를 받아 각 라벨에 대한(Multinomial Classification) 확률값을 내보내게 된다. 이때 출력층에 대한 활성화함수는 softmax 함수가 사용된다.
+최종적인 결과를 받아 각 라벨에 대한(Multinomial Classification) 확률값을 내보내게 된다. 이때 출력층에 대한 활성화함수는 softmax 함수가 사용된다.
 
-  **(참고: 맨 마지막 출력층 노드가 1개이면 이진분류이므로 활성화함수로 시그모이드 함수를 사용한다.)**
+**(참고: 맨 마지막 출력층 노드가 1개이면 이진분류이므로 활성화함수로 시그모이드 함수를 사용한다.)**
 
 ![image-20210318071545004](md-images/dl.png)
 
@@ -120,12 +120,13 @@
 
 Single-Layer 대신 Multi-Layer를 통해 문제 해결
 
-1. [Tensorflow 1.x 버전](https://github.com/sammitako/TIL/blob/master/Machine%20Learning/source-code/DL_0316(1).ipynb)
+1. [Tensorflow 1.x 버전](https://github.com/sammitako/TIL/blob/master/Deep%20Learning/source-code/DL_0316(1).ipynb)
 
-2. [Tensorflow 2.x 버전 (Keras)](https://github.com/sammitako/TIL/blob/master/Machine%20Learning/source-code/DL_0316(2).ipynb)
+2. [Tensorflow 2.x 버전 (Keras)](https://github.com/sammitako/TIL/blob/master/Deep%20Learning/source-code/DL_0316(2).ipynb)
 
    <details>
      <summary>Keras 구현 결과 해석</summary>
+     <br>
      <p>
        결과가 잘 안나오므로 hyper-parameter 중 활성화 함수를 시그모이드 함수에서 렐루 함수로 바꿔보았다.
      </p>
