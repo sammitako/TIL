@@ -199,29 +199,30 @@ t_data_test_onehot = sess.run(tf.one_hot(t_data_test, depth=10))
 
      입력의 개수와 출력의 개수를 이용해서 가중치의 초기값을 결정하는 방식이다.
 
-     ```python
+  ```python
   # python
   W = np.random.randn(num_of_input, num_of_output) / np.sqrt(num_of_input)
-     ```
-
-     ```python
-  # tensorflow 1.x
-  W2 = tf.get_variable('W2', shape=[784, 512], initializer=tf.contrib.layers.xavier_initializer())
-     ```
+  
+# tensorflow 1.x
+  W2 = tf.get_variable('W2', shape=[784, 512], 
+  										 initializer=tf.contrib.layers.xavier_initializer())
+  ```
+  
+  <br>
   
   ### 2. He's Initialization (2015)
   
   ​	Xavier Initialization 확장버전
-  
-	```python
+	
+  ```python
   # python
   W = np.random.randn(num_of_input, num_of_output) / np.sqrt(num_of_input / 2)
-  ```
   
-  ```python
   # tensorflow 1.x
-W2 = tf.get_variable('W2', shape=[784, 64], initializer=tf.contrib.layers.variance_scaling_initializer())
-  ```
+  W2 = tf.get_variable('W2', shape=[784, 64], initializer=tf.contrib.layers.variance_scaling_initializer())
+```
+  
+  
 
 <br>
 
@@ -232,7 +233,7 @@ W2 = tf.get_variable('W2', shape=[784, 64], initializer=tf.contrib.layers.varian
 
 ```python
 # layer2 = tf.sigmoid(tf.matmul(X,W2) + b2)
-	layer2 = tf.nn.relu(tf.matmul(X,W2) + b2)
+layer2 = tf.nn.relu(tf.matmul(X,W2) + b2)
 ```
 
 <br>
