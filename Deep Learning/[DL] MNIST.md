@@ -213,16 +213,15 @@ t_data_test_onehot = sess.run(tf.one_hot(t_data_test, depth=10))
   
   ​	Xavier Initialization 확장버전
   
-```python
+	```python
   # python
   W = np.random.randn(num_of_input, num_of_output) / np.sqrt(num_of_input / 2)
   ```
   
-  
-     ```python
+  ```python
   # tensorflow 1.x
-  W2 = tf.get_variable('W2', shape=[784, 64], initializer=tf.contrib.layers.variance_scaling_initializer())
-     ```
+W2 = tf.get_variable('W2', shape=[784, 64], initializer=tf.contrib.layers.variance_scaling_initializer())
+  ```
 
 <br>
 
