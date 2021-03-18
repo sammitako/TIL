@@ -199,35 +199,22 @@ t_data_test_onehot = sess.run(tf.one_hot(t_data_test, depth=10))
 
      입력의 개수와 출력의 개수를 이용해서 가중치의 초기값을 결정하는 방식이다.
 
-  ```python
-  # python
-  W = np.random.randn(num_of_input, num_of_output) / np.sqrt(num_of_input)
-  
-# tensorflow 1.x
-  W2 = tf.get_variable('W2', shape=[784, 512], 
-  										 initializer=tf.contrib.layers.xavier_initializer())
-  ```
-  
+  * `W = np.random.randn(num_of_input, num_of_output) / np.sqrt(num_of_input)`
+
+  * `W2 = tf.get_variable('W2', shape=[784, 512], initializer=tf.contrib.layers.xavier_initializer())`
+
   <br>
-  
+
   ### 2. He's Initialization (2015)
-  
+
   ​	Xavier Initialization 확장버전
-	
-  ```python
-  # python
-  W = np.random.randn(num_of_input, num_of_output) / np.sqrt(num_of_input / 2)
-  
-  # tensorflow 1.x
-  W2 = tf.get_variable('W2', shape=[784, 64], initializer=tf.contrib.layers.variance_scaling_initializer())
-```
-  
-  
+
+  * `W = np.random.randn(num_of_input, num_of_output) / np.sqrt(num_of_input / 2)`
+  * `W2 = tf.get_variable('W2', shape=[784, 64], initializer=tf.contrib.layers.variance_scaling_initializer())`
 
 <br>
 
 ## ReLU(Rectified Linear Unit) Activation Function
-
 
 **결론적으로 Vanishing Gradient 문제 때문에 Neural Network에서는 시그모이드 함수를 쓰지 않는다.**
 
