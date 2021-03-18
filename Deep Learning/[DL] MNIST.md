@@ -232,7 +232,7 @@ W2 = tf.get_variable('W2', shape=[784, 64], initializer=tf.contrib.layers.varian
 
 ```python
 # layer2 = tf.sigmoid(tf.matmul(X,W2) + b2)
-layer2 = tf.nn.relu(tf.matmul(X,W2) + b2)
+	layer2 = tf.nn.relu(tf.matmul(X,W2) + b2)
 ```
 
 <br>
