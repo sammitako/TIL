@@ -24,8 +24,6 @@
 4. MobileNet: 정확도 보다는 **수행 속도**에 강점이 있는 모델
 5. **EfficientNet**: **B1~B6**까지 있으며 모델6으로 갈수록 레이어 수가 많아지기 때문에 정확도에 강점이 있는 모델이지만 **수행 속도가 느리다.** 학습 속도 대비 **높은 정확도**를 산출한다. (메모리 사용량이 많아서 무겁다.)
 
-------
-
 <br>
 
 ## **학습 데이터 -  ImageNet**
@@ -44,13 +42,13 @@ CNN 모델을 직접 만들어서 모델의 정확도를 높일 수 있지만 �
 
 <br>
 
-## Pretrained Network를 이용한 Feature Extraction 코드 구현
+# Pretrained Network를 이용한 Feature Extraction 코드 구현
 
 우리 데이터를 Pretrained Network의 특성을 추출하는 레이어(Convolution layer, Pooling layer) 안으로 입력하여 결과적으로 도출된 Activation Map을 우리의 Classifier인 FC Layer의 입력으로 사용하여 반복 학습을 통해 Weight와 bias를 갱신한다.
 
 
 
-### **VGG16**
+## **VGG16**
 
 기학습된 모델을 통해 Classifier의 입력 데이터로 들어가는 Activation Map을 얻게된다.
 
