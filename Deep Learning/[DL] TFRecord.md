@@ -28,3 +28,9 @@ IO에 대한 오버헤드를 방지하기 위해 텐서플로우의 데이터 �
 3. TFRecord 생성 함수
 4. Data Split 후 TFRecord 생성
 5. TFRecord 파일 사용
+
+<details>
+  <summary>Cats and Dogs Example Code</summary>
+  <a href="https://github.com/sammitako/TIL/blob/master/Deep%20Learning/source-code/DL_0331_TFRecord_CATS%26DOGS.ipynb">DL_0331_TFRecord_CATS&DOGS</a>
+</details>
+
