@@ -101,4 +101,4 @@ print(score)
 
 -----
 
-Reference: [ML_0401_SVM]()
+Reference: [ML_0401_SVM](https://github.com/sammitako/TIL/blob/master/Machine%20Learning/source-code/ML_0401_SVM.ipynb)

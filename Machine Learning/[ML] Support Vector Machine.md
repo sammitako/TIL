@@ -123,7 +123,7 @@ model = SVC(kernel='linear', C=0.001)
 
 ## SVM 예제 코드 구현
 
-👉🏼 [아래 예제들에 대한 코드 구현으로 이동]()
+👉🏼 [아래 예제들에 대한 코드 구현으로 이동](https://github.com/sammitako/TIL/blob/master/Machine%20Learning/source-code/ML_0401_SVM.ipynb)
 
 * SVM Example
 * BMI Example
