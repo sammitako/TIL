@@ -172,4 +172,4 @@ history = model.fit(train_features, train_labels,
 
 -----
 
-Reference: [DL_0329_Feature_Extraction_(Pretrained_Network)](https://github.com/sammitako/TIL/blob/master/Deep%20Learning/source-code/DL_0329_Feature_Extraction_(Pretrained_Network).ipynb)
+Reference: [DL_0329_Feature_Extraction_(Pretrained_Network)](https://github.com/sammitako/TIL/blob/master/Deep%20Learning/source-code/DL_0329_Feature_Extraction%20(Pretrained_Network).ipynb)
